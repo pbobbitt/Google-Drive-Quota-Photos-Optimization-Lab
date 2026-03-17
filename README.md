@@ -58,7 +58,18 @@ To maintain a clean workstation environment and adhere to long-term storage best
 * **Action:** Executed a cut/paste operation of the 4 validated volumes from the `C:\Users\pbobb\Downloads` directory to the external NTFS-formatted physical drive.
 * **Technical Justification:** Separating "Staging" (Downloads) from "Production" (External Archive) prevents accidental deletion and ensures the host machine's primary OS drive remains optimized for performance.
 
-#### Phase 5: Cloud Optimization
+#### Phase 5: Data Purging & Risk Mitigation
+
+With the high-resolution masters verified and secured in the physical production archive, I executed the final phase of the storage recovery plan. This required precise configuration to prevent accidental data loss on endpoint devices.
+
+* **Pre-Deletion Safety Configuration:**
+    * **Action:** Disabled "Back up & sync" on the primary mobile endpoint (Android/iOS).
+    * **Technical Justification:** **Preventing Bidirectional Synchronization Errors.** In a standard sync environment, deleting an asset from the Cloud (SaaS) triggers a downstream command to delete the corresponding local file on the mobile hardware. Disabling this feature decoupled the cloud quota from the physical device storage, ensuring that cloud-side "Quota Recovery" did not impact the user's local mobile assets.
+* **Administrative Purge:**
+    * **Method:** Utilized the Google Photos Web UI to perform a bulk "Shift-Click" selection of **~7.27 GB** of identified media.
+* **Result:** Successfully recovered **~50%** of total account capacity, returning the environment to a "Healthy" status.
+
+> **Evidence:** See [Post Storage Audit](https://github.com/pbobbitt/Google-Drive-Quota-Photos-Optimization-Lab/blob/main/images/Storage%20Audit%20After.png) in Visual Documentation.
 
 ### 4. Quality Assurance (QA) & Verification
 
