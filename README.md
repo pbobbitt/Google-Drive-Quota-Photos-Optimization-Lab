@@ -1,7 +1,7 @@
 # Google Drive Quota & Photos Optimization Lab
 
 ## Executive Summary
-This project demonstrates the migration of critical data from a near-capacity SaaS environment to local physical storage. It highlights the ability to manage storage quotas, ensure data integrity during transit, and implement archival policies to maintain service continuity.
+This project demonstrates migrating critical data from a near-capacity SaaS environment to local physical storage. It highlights the ability to manage storage quotas, ensure data integrity during transit, and implement archival policies to maintain service continuity.
 
 * **Primary Skill:** Cloud Data Migration
 * **Certification Alignment:** CompTIA A+, Cloud+
@@ -25,7 +25,7 @@ A professional Google Workspace account reached 97% storage utilization, creatin
 * Scope: 15GB of unstructured data (Photos, Videos, and Drive documents).
 
 ### 2. Design & Strategy
-Prior to execution, I performed a storage audit to categorize data. I decided to use Google Takeout for a full export of high-utilization categories. To ensure download stability and prevent file corruption, I configured the export to use 2GB .zip volumes.
+Before execution, I conducted a storage audit to categorize data. I decided to use Google Takeout to export all high-utilization categories. To ensure download stability and prevent file corruption, I configured the export to use 2GB .zip volumes.
 
 
 ### 3. Implementation
