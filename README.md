@@ -1,51 +1,49 @@
-# [Lab Title]
+# Google Drive Quota & Photos Optimization Lab
 
 ## Executive Summary
-A brief overview of the project and the business or technical value delivered.
+This project demonstrates the migration of critical data from a near-capacity SaaS environment to local physical storage. It highlights the ability to manage storage quotas, ensure data integrity during transit, and implement archival policies to maintain service continuity.
 
-* **Primary Skill:** [Networking / AD / Cloud]
-* **Certification Alignment:** [CompTIA A+, Network+, Cloud+]
-
----
+* **Primary Skill:** Cloud Data Migration
+* **Certification Alignment:** CompTIA A+, Cloud+
 
 ## The Scenario
-Describe the real-world problem being solved.
+A professional Google Workspace account reached 97% storage utilization, creating an imminent risk of service interruption (inability to receive emails or sync documents). A solution was required to audit the data, archive "cold" assets to on-premise hardware, and optimize remaining cloud storage without data loss.
 
-Example:
-"A small organization required centralized authentication and role-based access control to replace unmanaged local accounts."
-
----
 
 ## Environment & Tools
-* **Platform/OS:** [Windows Server 2022, Windows 11]
-* **Tools Used:** [PowerShell, Active Directory, Hyper-V]
-* **Methodology:** [CompTIA Troubleshooting Model, Least Privilege]
-
----
+* **Platform/OS:** Google Workspace / Windows 11
+* **Tools Used:** Google Takeout, Google One Storage Manager, PowerShell
+* **Methodology:** 3-2-1 Backup Strategy, Data Lifecycle Management
 
 ## Deployment & Execution
 
 ### 1. Requirements & Scope
-Define the goals and constraints.
+* Goal: Reduce cloud storage utilization to below 20%.
+
+* Constraint: Ensure zero data loss during migration and maintain original file metadata.
+
+* Scope: 15GB of unstructured data (Photos, Videos, and Drive documents).
 
 ### 2. Design & Strategy
-Explain planning decisions before implementation.
+Prior to execution, I performed a storage audit to categorize data. I decided to use Google Takeout for a full export of high-utilization categories. To ensure download stability and prevent file corruption, I configured the export to use 2GB .zip volumes.
+
 
 ### 3. Implementation
-List the technical steps used to deploy the solution.
+1. SaaS Audit: Utilized Google One Storage Manager to identify the largest files for removal.
+2. Data Export: Initiated a Google Takeout request for Drive and Photos.
+3. Physical Transfer: Downloaded the multi-part archive directly to a local NTFS-formatted external drive.
+4. Cloud Optimization: Executed the "Recover Storage" tool to compress remaining cloud media and purged files confirmed as backed up.
+
 
 ### 4. Quality Assurance (QA) & Verification
-How the solution was validated.
-
-Examples:
-- Ping tests
-- User login verification
-- Storage integrity checks
+- Hash Verification: Executed PowerShell Get-FileHash on downloaded volumes to ensure file integrity.
+- Data Parity: Compared local folder properties (size and file count) against the Google Takeout manifest.
+- Service Restoration: Verified the Google One dashboard reflected a "Healthy" status (<15% used) post-purge.
 
 ### 5. Documentation & Maintenance
-Policies, monitoring, or maintenance steps created.
+- Retention Policy: Established a policy to move media older than 1 year to local archival storage annually.
+- Audit Schedule: Set a quarterly calendar reminder to monitor storage growth and perform manual deduplication.
 
----
 
 ## Troubleshooting Log
 | Issue Encountered | Root Cause Analysis | Resolution & Verification |
@@ -56,15 +54,15 @@ Policies, monitoring, or maintenance steps created.
 
 > **Note:** For labs involving physical disassembly or hardware repair, ensure all components are documented and screws are organized/mapped to ensure proper reassembly.
 
----
 
 ## Key Achievements & Insights
 
-* **Achievement:** Implemented centralized user management using Active Directory.
-* **Insight:** Group Policy significantly simplified workstation configuration.
-* **Metric:** Reduced manual account management by 90%.
+- **Achievement**: Successfully recovered 85% of available cloud storage, preventing service lockout.
 
----
+- **Insight**: Identified that "Original Quality" media uploads were the primary driver of storage exhaustion; adjusted sync settings to "Storage Saver" to mitigate future growth.
+
+- **Metric**: Avoided immediate recurring costs associated with upgrading to the next SaaS storage tier.
+
 
 ## Visual Documentation
 
