@@ -122,6 +122,6 @@ Beyond cryptographic validation, I performed a manual "Spot Check" on a random s
 
 ### After
 
-#### Initial Storage Audit & Identification
+#### Post Storage Audit & Identification
 <img src="images/Storage%20Audit%20After.png" alt="Google One Storage 49 Percent Full Breakdown" width="70%">
 
