@@ -32,7 +32,7 @@ Before execution, I conducted a storage audit to categorize data. I decided to u
 
 #### Step 1: SaaS Storage Audit
 I utilized the Google One Storage Manager to identify data "hotspots." The audit revealed that Google Photos and hidden Device Backups accounted for over 70% of total utilization.
-> **Evidence:** See [Initial Storage Audit](#initial-storage-audit--identification) in Visual Documentation.
+> **Evidence:** See [Initial Storage Audit](https://github.com/pbobbitt/Google-Drive-Quota-Photos-Optimization-Lab/blob/main/images/Storage%20Audit%20Before.png) in Visual Documentation.
 
 #### Step 2: Data Archival (Google Takeout)
 To migrate the data without losing metadata (dates, locations, tags), I initiated a Google Takeout export. 
@@ -41,7 +41,7 @@ To migrate the data without losing metadata (dates, locations, tags), I initiate
 
 #### Step 3: Local Integrity Verification
 Once the transfer to the local NTFS drive was complete, I used PowerShell to verify the hash of each volume. 
-```powershell
+powershell
 Get-FileHash "C:\Downloads\takeout-20260317-001.zip"
 
 
