@@ -29,10 +29,20 @@ Before execution, I conducted a storage audit to categorize data. I decided to u
 
 
 ### 3. Implementation
-1. SaaS Audit: Utilized Google One Storage Manager to identify the largest files for removal.
-2. Data Export: Initiated a Google Takeout request for Drive and Photos.
-3. Physical Transfer: Downloaded the multi-part archive directly to a local NTFS-formatted external drive.
-4. Cloud Optimization: Executed the "Recover Storage" tool to compress remaining cloud media and purged files confirmed as backed up.
+
+#### Step 1: SaaS Storage Audit
+I utilized the Google One Storage Manager to identify data "hotspots." The audit revealed that Google Photos and hidden Device Backups accounted for over 70% of total utilization.
+> **Evidence:** See [Initial Storage Audit](#initial-storage-audit--identification) in Visual Documentation.
+
+#### Step 2: Data Archival (Google Takeout)
+To migrate the data without losing metadata (dates, locations, tags), I initiated a Google Takeout export. 
+* **Configuration:** Exported 52 folders.
+* **Optimization:** Used 2GB .zip volumes to mitigate risks of packet loss or timeout during the physical download phase.
+
+#### Step 3: Local Integrity Verification
+Once the transfer to the local NTFS drive was complete, I used PowerShell to verify the hash of each volume. 
+```powershell
+Get-FileHash "C:\Downloads\takeout-20260317-001.zip"
 
 
 ### 4. Quality Assurance (QA) & Verification
