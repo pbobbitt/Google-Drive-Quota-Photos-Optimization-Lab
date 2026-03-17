@@ -51,6 +51,14 @@ With the SaaS export prepared, I initiated the physical transfer of data from Go
 * **Download Strategy:** Executed a sequential download of the 2GB volumes to prevent bandwidth saturation and ensure session stability.
 * **Infrastructure Check:** Verified local disk space availability (Destination Drive) to accommodate the ~11GB payload before initiating the transfer.
 
+#### Phase 4: Data Archival
+
+To maintain a clean workstation environment and adhere to long-term storage best practices, I migrated the verified assets out of the local "Staging" area.
+
+* **Action:** Executed a cut/paste operation of the 4 validated volumes from the `C:\Users\pbobb\Downloads` directory to the external NTFS-formatted physical drive.
+* **Technical Justification:** Separating "Staging" (Downloads) from "Production" (External Archive) prevents accidental deletion and ensures the host machine's primary OS drive remains optimized for performance.
+
+#### Phase 5: Cloud Optimization
 
 ### 4. Quality Assurance (QA) & Verification
 
@@ -60,6 +68,7 @@ To ensure no data corruption occurred during the 15GB/s transition from the Goog
 * **Tool Used:** PowerShell `Get-FileHash`
 * **Algorithm:** SHA-256
 * **Verification Logic:** By generating a unique digital fingerprint (hash) of the local file, I can verify that the data matches the source. In a production environment, this protects against "bit rot" and incomplete transfers.
+  
 
 #### Data Integrity Evidence (Multi-Volume Verification)
 To ensure the integrity of the entire migration, I generated SHA-256 hashes for all volumes using the PowerShell `Get-FileHash` cmdlet.
@@ -73,6 +82,14 @@ To ensure the integrity of the entire migration, I generated SHA-256 hashes for 
 
 > **Evidence:** See [Powershell Get-Filehash](https://github.com/pbobbitt/Google-Drive-Quota-Photos-Optimization-Lab/blob/main/images/powershell%20Get-FileHash.png) in Visual Documentation.
 
+
+#### Physical Asset Verification (Spot Check)
+Beyond cryptographic validation, I performed a manual "Spot Check" on a random sample of assets within each Volume.
+* **Result:** Successfully extracted and rendered high-resolution `.jpg` files without artifacts or header corruption.
+* **Conclusion:** The local archive is confirmed as "Healthy" and ready for long-term storage.
+
+  
+
 ### 5. Documentation & Maintenance
 - Retention Policy: Established a policy to move media older than 1 year to local archival storage annually.
 - Audit Schedule: Set a quarterly calendar reminder to monitor storage growth and perform manual deduplication.
@@ -82,8 +99,7 @@ To ensure the integrity of the entire migration, I generated SHA-256 hashes for 
 | Issue Encountered | Root Cause Analysis | Resolution & Verification |
 | :--- | :--- | :--- |
 | Failed to drag and drop "takeout" file to powershell to populate path for `Get-fileHash` command | I was inside of the `Takeout-#######-01` Zip parent folder   | Backed out of file explorer by one layer to just drag and drop the parent `Takeout-#######-01` folder|
-| Remote users unable to access VPN. | Security Group ingress rules blocked Port 443. | Updated AWS Security Group; verified with successful handshake. |
-| [New Issue] | [Why it broke] | [How it was fixed & verified] |
+
 
 > **Note:** For labs involving physical disassembly or hardware repair, ensure all components are documented and screws are organized/mapped to ensure proper reassembly.
 
