@@ -66,14 +66,12 @@ Prior to execution, I performed a storage audit to categorize data. I decided to
 
 ## Visual Documentation
 
-**Before**
+### Before
 
-Storage Utilization
-
+#### Storage Utilization
 <img src="images/storage%20utilization%20before.png" alt="Google Drive 97 Percent Full" width="60%">
 
-Storage Details
-
+#### Storage Details
 <img src="images/storage%20details%20before.png" alt="Google Drive Categorized" width="60%">
 
 
