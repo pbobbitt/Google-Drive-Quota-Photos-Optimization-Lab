@@ -71,6 +71,8 @@ To ensure the integrity of the entire migration, I generated SHA-256 hashes for 
 | Part 3 | 9782F20ACDB6E7D75614F4F44714D7FCF37A99578165EDF992C7E7F9109C714C | **Verified** |
 | Part 4 | C6A7E7C94416A2CFA3AF3C41868C2B0E3183B1909AD5F9BFCE35C1C6EA1290CF | **Verified** |
 
+> **Evidence:** See [Powershell Get-Filehash](https://github.com/pbobbitt/Google-Drive-Quota-Photos-Optimization-Lab/blob/main/images/powershell%20Get-FileHash.png) in Visual Documentation.
+
 ### 5. Documentation & Maintenance
 - Retention Policy: Established a policy to move media older than 1 year to local archival storage annually.
 - Audit Schedule: Set a quarterly calendar reminder to monitor storage growth and perform manual deduplication.
