@@ -111,5 +111,5 @@ To ensure the long-term integrity of this newly implemented storage architecture
 #### Post Storage Audit & Identification
 <img src="images/Storage%20Audit%20After.png" alt="Google One Storage 49 Percent Full Breakdown" width="70%">
 
-Powershell Hash Command
+#### Powershell Hash Command
 <img src="images/powershell%20Get-FileHash.png" alt="Powershell Command" width="70%">
