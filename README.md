@@ -45,7 +45,7 @@ The remediation was executed through a methodical 7-phase "Audit-to-Architecture
   
 ### 4. Quality Assurance (QA) & Verification
 
-#### Data Integrity Validation (Hash Check)
+Data Integrity Validation (Hash Check)
 To ensure no data corruption occurred during the 7GB transition from the Google Cloud to local storage, I performed a cryptographic hash check on each volume.
 
 * **Tool Used:** PowerShell `Get-FileHash`
@@ -110,17 +110,17 @@ To ensure the long-term integrity of this newly implemented storage architecture
 
 ## Visual Documentation
 
-### Before
+Before
 
-#### Initial Storage Audit & Identification
+Initial Storage Audit & Identification
 <img src="images/Storage%20Audit%20Before.png" alt="Google One Storage 97 Percent Full Breakdown" width="70%">
 
-### After
+After
 
-#### Post Storage Audit & Identification
+Post Storage Audit & Identification
 <img src="images/Storage%20Audit%20After.png" alt="Google One Storage 49 Percent Full Breakdown" width="70%">
 
-#### Powershell Hash Command
+Powershell Hash Command
 <img src="images/powershell%20Get-FileHash.png" alt="Powershell Command" width="70%">
 
 
