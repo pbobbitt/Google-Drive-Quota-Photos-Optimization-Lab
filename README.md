@@ -53,7 +53,7 @@ To ensure no data corruption occurred during the 7GB transition from the Google 
 * **Verification Logic:** By generating a unique digital fingerprint (hash) of the local file, I can verify that the data matches the source. In a production environment, this protects against "bit rot" and incomplete transfers.
   
 
-#### Data Integrity Evidence (Multi-Volume Verification)
+Data Integrity Evidence (Multi-Volume Verification)
 To ensure the integrity of the entire migration, I generated SHA-256 hashes for all volumes using the PowerShell `Get-FileHash` cmdlet.
 
 | Volume | SHA-256 Hash | Status |
@@ -65,7 +65,7 @@ To ensure the integrity of the entire migration, I generated SHA-256 hashes for 
 
 > **Evidence:** See [Powershell Get-Filehash](https://github.com/pbobbitt/Google-Drive-Quota-Photos-Optimization-Lab/blob/main/images/powershell%20Get-FileHash.png) in Visual Documentation.
 
-### Functional & Architectural Validation
+Functional & Architectural Validation
 * **Physical Asset Spot Check:** Successfully extracted and rendered sample `.jpg` files from the external archive without artifacts or header corruption.
 * **Policy Verification:** Confirmed via Google Photos settings that the active upload policy transitioned to **Storage Saver**. Verified that the new destination account is actively receiving synchronized assets.
 * **Identity & Access Management (IAM) Validation:** Logged into the primary user account and verified that media assets hosted on the secondary storage account are visible via the shared library. This confirms the multi-account orchestration is functioning as designed.
